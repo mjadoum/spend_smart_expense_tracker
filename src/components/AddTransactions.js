@@ -12,17 +12,36 @@ export default function AddTransactions({ id, addTransaction }) {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
 
- useEffect(() => {
-   const storedLatitude = localStorage.getItem("initialLatitude");
-   const storedLongitude = localStorage.getItem("initialLongitude");
+useEffect(() => {
+  const storedLatitude = localStorage.getItem("initialLatitude");
+  const storedLongitude = localStorage.getItem("initialLongitude");
 
-   if (storedLatitude && storedLongitude) {
-     setLatitude(parseFloat(storedLatitude));
-     setLongitude(parseFloat(storedLongitude));
-   } else {
-     getLocation();
-   }
- }, []);
+  if (storedLatitude && storedLongitude) {
+    setLatitude(parseFloat(storedLatitude));
+    setLongitude(parseFloat(storedLongitude));
+  } else {
+    getLocation();
+  }
+}, []);
+
+const getLocation = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setLatitude(position.coords.latitude);
+        setLongitude(position.coords.longitude);
+        // Store the initial location
+        localStorage.setItem("initialLatitude", position.coords.latitude);
+        localStorage.setItem("initialLongitude", position.coords.longitude);
+      },
+      (error) => {
+        console.error("Error retrieving location:", error);
+      }
+    );
+  } else {
+    console.error("Geolocation is not supported by this browser.");
+  }
+};
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -40,7 +59,7 @@ export default function AddTransactions({ id, addTransaction }) {
     setTransactionText("");
     setTransactionAmount(0);
     setTransactionDate("");
-    
+
     // Play sound based on transaction amount
     if (transactionAmount > 0) {
       playSound(incomeMoney);
@@ -54,36 +73,15 @@ export default function AddTransactions({ id, addTransaction }) {
     const audio = new Audio(soundFile);
     audio.play();
   };
- const handleAmountChange = (event) => {
-   const value = event.target.value;
-   // Regex to allow only numbers and optional minus sign
-   const isValidInput = /^-?\d*\.?\d*$/.test(value);
-   if (isValidInput) {
-     setTransactionAmount(value);
-   }
- };
- const getLocation = () => {
-   if (navigator.geolocation) {
-     navigator.geolocation.getCurrentPosition(
-       (position) => {
-         setLatitude(position.coords.latitude);
-         setLongitude(position.coords.longitude);
-         // Store the initial location
-         localStorage.setItem("initialLatitude", position.coords.latitude);
-         localStorage.setItem("initialLongitude", position.coords.longitude);
-       },
-       (error) => {
-         console.error("Error retrieving location:", error);
-       }
-     );
-   } else {
-     console.error("Geolocation is not supported by this browser.");
-   }
- };
+  const handleAmountChange = (event) => {
+    const value = event.target.value;
+    // Regex to allow only numbers and optional minus sign
+    const isValidInput = /^-?\d*\.?\d*$/.test(value);
+    if (isValidInput) {
+      setTransactionAmount(value);
+    }
+  };
 
-
-
-  
 
   return (
     <div>
