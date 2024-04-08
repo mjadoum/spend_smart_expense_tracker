@@ -1,0 +1,413 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Outfit:wght@100..900&family=Quicksand:wght@300..700&display=swap");
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+.container {
+  padding: 20px;
+  color: #0d1d2c;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  font-size: 18px;
+  width: 100%;
+  gap: 10px;
+  font-weight: bold;
+}
+/* IncomeExpense page Style*/
+header {
+  color: #0d1d2c;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  font-family: "Outfit", sans-serif;
+  align-items: center;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 500;
+}
+.incomeExpenseContainer {
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+  width: 300px !important;
+  border: 2px solid #333;
+}
+.incomeExpenseContainer > div {
+  flex: 1;
+  text-align: center;
+}
+.incomeExpenseContainer > div:first-of-type {
+  border-right: 1px solid #333;
+}
+.BalanceBox {
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center !important;
+  width: 100%;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+}
+.BalanceBoxquestion {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+/* AddTransaction page Style */
+.AddTransactionContainer {
+  font-size: 15px;
+  color: #0d1d2c;
+  flex-direction: column;
+  border-radius: 4px;
+  border: 1px solid #e6e8e9;
+  width: 100%;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #ccc;
+}
+.AddTransactionContainer input[type="text"],
+.AddTransactionContainer input[type="number"] {
+  width: 90%;
+  outline: none;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+.AddTransactionContainer .btn {
+  color: white;
+  cursor: pointer;
+  flex-direction: row;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #1f92fd;
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 10px;
+  padding: 10px;
+  width: 100%;
+}
+/*  Transaction List page Style */
+.text,
+.amount {
+  font-weight: bold;
+}
+.amount {
+  font-size: 18px;
+  padding-top: 8px;
+}
+.monthdate {
+  background-color: #225e96;
+  color: #f7f7f7;
+  border-radius: 40px;
+  text-align: center;
+  padding: 10px;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  cursor: pointer;
+  font-family: "Quicksand", sans-serif;
+}
+.money {
+  font-size: 22px;
+  padding-top: 15px;
+  letter-spacing: 1px;
+  margin: 1px 0;
+  font-family: "Quicksand", sans-serif !important;
+}
+.money.plus {
+  color: #31aa64;
+}
+.money.minus {
+  color: #c0392b;
+}
+.overlay-content-currency .icon-style {
+  margin-right: 10px;
+  font-size: 15px;
+  color: #2967a0;
+}
+.overlay-content-currency ul li {
+  list-style: none;
+  margin-bottom: 10px;
+  margin-left: -25px;
+  font-family: "Outfit", sans-serif;
+}
+.overlay-content-currency ul li span {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Lexend", sans-serif !important;
+}
+/* Headers Style */
+h1 {
+  letter-spacing: 1px;
+  margin: 0;
+}
+.AddTransactionContainer h3,
+.modal h3,
+.overlay-content-currency h3 {
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-size: 20px !important;
+}
+.overlay-content-currency p {
+  font-size: 15px !important;
+  text-align: center;
+}
+h3 {
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+  margin: 10px 0 10px;
+  font-size: 16px !important;
+  text-align: left;
+}
+h2 {
+  font-family: "Lexend", sans-serif;
+  border-top: 1px solid #333;
+  padding-top: 30px;
+  font-size: 25px;
+  text-align: center;
+}
+h4 {
+  margin: 0;
+  font-size: 20px;
+  font-family: "Outfit", sans-serif;
+}
+/* Inputs and labels Style */
+label {
+  display: inline-block;
+  margin: 5px 0;
+  font-family: "Outfit", sans-serif;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  border: 1px solid #333;
+  border-radius: 2px;
+  display: block;
+  font-size: 15px;
+  padding: 10px;
+  width: 100% !important;
+  border-radius: 4px;
+  font-family: "Lexend", sans-serif !important;
+}
+/* Transaction List Style */
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+.list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-size: 17px !important;
+  font-family: "Quicksand", sans-serif;
+  border-radius: 13px;
+}
+.list li .transaction-info {
+  display: flex;
+  flex-direction: column;
+}
+.list li .transaction-info .text {
+  margin: 6px 0px;
+}
+.list li .date-span,
+.location-span {
+  font-size: 0.66em;
+  margin-top: 4px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+}
+.list li.positiveAmount {
+  border: 1px solid #31aa64;
+  border-right-width: 7px;
+  border-left-width: 7px;
+}
+.list li.negativeAmount {
+  border: 1px solid #c0392b;
+  border-right-width: 7px;
+  border-left-width: 7px;
+}
+
+.positiveAmount {
+  color: #31aa64; /* green color for positive amounts */
+}
+
+.negativeAmount {
+  color: #c0392b; /* red color for negative amounts */
+}
+.list strong.positiveAmount {
+  padding-top: 8px;
+  color: #31aa64 !important;
+  font-family: "Quicksand", sans-serif !important;
+}
+.list strong.negativeAmount {
+  padding-top: 8px;
+  color: #c0392b !important;
+  font-family: "Quicksand", sans-serif !important;
+}
+.modal,
+.confirmation-overlay,
+.overlay-currency {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+.modal-content,
+.confirmation-dialog,
+.overlay-content-currency {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-family: "Quicksand", sans-serif !important;
+  width: 300px;
+}
+.confirmation-dialog {
+  margin: 20px;
+}
+.modal input {
+  margin-bottom: 20px;
+}
+strong {
+  margin-top: 0px;
+}
+.batteryBox {
+  background-color: rgb(78, 196, 48);
+  padding: 0px;
+  border-radius: 5px;
+  width: 70px;
+  padding-bottom: 10px;
+  position: relative;
+  top: 48%;
+  right: 0;
+  transform: translate(310%, 75%);
+}
+.batteryBox p {
+  padding-top: -30px;
+  color: #fff;
+  font-size: 14px;
+  margin: 5px;
+  text-align: center;
+  font-family: "Quicksand", sans-serif !important;
+}
+.batteryBox .icon-battery {
+  font-size: 45px !important;
+  color: white;
+  margin: auto;
+  margin-left: 14px;
+  margin-bottom: -10px;
+}
+/* Buttons */
+.list li .update-btn {
+  cursor: pointer;
+  background-color: #3498db;
+  border: 0;
+  border-radius: 0 10px 10px 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 12px 5px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+.list li:hover .update-btn {
+  opacity: 1;
+}
+.btn:focus,
+.delete-btn:focus,
+.Add-btn:focus {
+  outline: 0;
+}
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+.modal-content button,
+.confirmation-dialog button,
+.overlay-content-currency button {
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  width: 100%;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.save-btn {
+  background-color: #007bff;
+  font-family: "Quicksand", sans-serif;
+}
+.cancel-btn {
+  background-color: #dc3545;
+  font-family: "Quicksand", sans-serif;
+}
+.delete-btn {
+  cursor: pointer;
+  background-color: #c0392b;
+  border: 0;
+  border-radius: 10px 0 0 10px;
+  color: #fff;
+  font-size: 21px;
+  line-height: 30px;
+  padding: 12px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.Add-btn {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  width: 100%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-family: "Lexend", sans-serif;
+}
