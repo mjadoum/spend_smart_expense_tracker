@@ -13,7 +13,7 @@ To install and run the Expense Tracker project, follow these steps:
 1. Clone the repository to your local machine in the terminal:
 
 ```bash
-git clone https://github.com/mjadoum/ExpenseTracker-SpendSmart.git
+git clone https://github.com/mjadoum/spend_smart_expense_tracker.git
 ```
 
 2. Navigate to the project directory:#
