@@ -80,7 +80,6 @@ export default function TransactionsList({
     } else if (updatedTransaction.amount < 0) {
       playSound(expenseMoney);
     }
-
   };
 
   const playSound = (soundFile) => {
@@ -111,16 +110,21 @@ export default function TransactionsList({
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
-          const geocodingApiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyDqyPeQYFaX0pkZ5sdMaAH2E43yHM3DJLk`;
+          const apiKey = "IZqWUjyAVlIepe_faFQw5Fp762GhBO7IegUIya7Kxtg"; // Replace with your HERE API key
+          const geocodingApiUrl = `https://revgeocode.search.hereapi.com/v1/revgeocode?at=${latitude},${longitude}&apiKey=${apiKey}`;
 
           fetch(geocodingApiUrl)
             .then((response) => response.json())
             .then((data) => {
-              if (data.results && data.results.length > 0) {
-                const placeName = data.results[0].formatted_address;
+              if (data.items && data.items.length > 0) {
+                const address = data.items[0].address;
+                const city = address.city;
+                const postalCode = address.postalCode;
+
+                const fullAddress = ` ${city}, ${postalCode}`;
                 setTransactionLocations((prevLocations) => ({
                   ...prevLocations,
-                  [transaction.id]: placeName,
+                  [transaction.id]: fullAddress,
                 }));
               }
             })
