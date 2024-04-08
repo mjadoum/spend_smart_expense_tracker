@@ -19,7 +19,7 @@ git clone https://github.com/mjadoum/spend_smart_expense_tracker.git
 2. Navigate to the project directory:#
 
 ```bash
-cd ExpenseTracker-SpendSmart
+cd spend_smart_expense_tracker
 ```
 
 3. Install dependencies using npm or yarn:
