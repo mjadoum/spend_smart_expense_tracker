@@ -4,7 +4,7 @@ Spend Smart is a simple React.js application designed to help you manage your ex
 
 ## Demo of Spend Smart app
 
-https://mjadoum.github.io/Spend-Smart-App/
+https://mjadoum.github.io/spend_smart/
 
 ## Installation
 
